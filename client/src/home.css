@@ -1,0 +1,155 @@
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* גובה מינימלי של כל המסך */
+    text-align: center;
+    padding: 1rem; /* 16px */
+    position: relative; /* חובה למיקום האלמנטים האבסולוטיים */
+    overflow: hidden; /* לוודא שהקישוטים לא יגלשו מחוץ לטווח */
+}
+
+/* כותרת עליונה */
+.home-subtitle {
+    color: #ff6f00; /* צבע כתום כמו בתמונה */
+    font-size: 1.5rem; /* 18px */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem; /* 8px */
+}
+
+.crown-icon {
+    font-size: 1.5rem; /* 24px */
+    margin-left: 0.5rem; /* 8px */
+}
+
+.home-title {
+    width: 30vw;
+    margin-bottom: 1rem; 
+    display: flex;
+    align-items: center;
+}
+
+.rocket-icon {
+    margin-right: 1rem; /* 16px - בגלל כיוון RTL בתמונה */
+    animation: bounceSlow 3s ease-in-out infinite; /* אנימציה */
+}
+
+/* כותרת משנית */
+.home-description {
+    color: #16dcff; 
+    font-size: 2rem; 
+    line-height: 1.6; 
+    margin-bottom: 2rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; 
+}
+
+.rocket-emoji, .sparkle-emoji {
+    font-size: 1.5rem; /* 24px */
+}
+
+/* קונטיינר לכפתורים */
+.home-buttons-container {
+    display: flex;
+    flex-direction: column; /* כעמודה בברירת מחדל */
+    gap: 1.5rem; /* 24px */
+    margin-bottom: 5rem; /* 80px */
+}
+
+@media (min-width: 768px) { /* עבור מסכים בינוניים ומעלה (כמו md ב-Tailwind) */
+    .home-buttons-container {
+        flex-direction: row; /* כשורה במסכים גדולים יותר */
+    }
+}
+
+/* סגנון כפתור בסיסי */
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* 8px */
+    padding: 0.75rem 2rem; /* 12px 32px */
+    border-radius: 9999px; /* rounded-full */
+    font-weight: 600; /* Semibold */
+    font-size: 1.125rem; /* 18px */
+    text-decoration: none; /* מסיר קו תחתון מקישורים */
+    transition: all 0.3s ease-in-out;
+    width: 16rem; /* 256px - רוחב קבוע */
+    max-width: 100%; /* כדי שלא יגלשו במסכים קטנים */
+}
+
+/* כפתור "גלה מוצרים חדשים" */
+.discover-button {
+    background-color: #FFFFFF; /* לבן */
+    color: #4B5563; /* אפור כהה */
+    border: 1px solid #D1D5DB; /* אפור בהיר */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* צל */
+}
+
+.discover-button:hover {
+    background-color: #F3F4F6; /* אפור בהיר יותר */
+}
+
+/* כפתור "התחל לקנות עכשיו!" */
+.buy-now-button {
+    color: #FFFFFF; /* לבן */
+    /* גרדיאנט לכפתור הירוק */
+    background: linear-gradient(to right, #6EE7B7, #34D399); /* ירוק בהיר לירוק כהה */
+    box-shadow: 0 4px 10px rgba(52, 211, 153, 0.5); /* צל ירוק זוהר */
+    font-weight: bold; /* Bold */
+}
+
+.buy-now-button:hover {
+    opacity: 0.9; /* עמעום קל במעבר עכבר */
+}
+
+/* אייקונים בתוך הכפתורים */
+.search-icon, .cart-icon {
+    font-size: 1.25rem; /* 20px */
+}
+
+/* אלמנטים קישוטיים ברקע */
+.decoration-item {
+    position: absolute;
+    font-size: 2rem; /* 32px */
+    opacity: 0.7; /* שקיפות קלה */
+}
+
+/* מיקומים ספציפיים לאלמנטים הקישוטיים */
+.rocket-deco-1 { top: 2.5rem; left: 2.5rem; animation: float 4s ease-in-out infinite; } /* 40px */
+.star-deco-1 { top: 25%; right: 25%; font-size: 1.5rem; animation: spinSlow 10s linear infinite; }
+.diamond-deco-1 { bottom: 2.5rem; right: 5rem; animation: float 4s ease-in-out infinite 1s; } /* 40px */
+.star-deco-2 { top: 50%; left: 5rem; font-size: 1.25rem; animation: spinSlow 10s linear infinite 0.5s; }
+.rocket-deco-2 { bottom: 5rem; left: 33%; animation: float 4s ease-in-out infinite 2s; }
+
+/* טקסט "הפעל את Windows" */
+.windows-text {
+    position: absolute;
+    bottom: 0.5rem; /* 8px */
+    left: 0.5rem; /* 8px */
+    color: #6B7280; /* Gray-500 */
+    font-size: 0.75rem; /* 12px */
+}
+
+/* אנימציות */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes bounceSlow { /* עבור אייקון הרקטה של TechStore */
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
